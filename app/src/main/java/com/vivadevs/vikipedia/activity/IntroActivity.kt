@@ -1,9 +1,10 @@
-package com.vivadevs.vikipedia
+package com.vivadevs.vikipedia.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Handler
+import com.vivadevs.vikipedia.R
 
 class IntroActivity : AppCompatActivity() {
 

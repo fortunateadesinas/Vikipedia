@@ -1,4 +1,4 @@
-package com.vivadevs.vikipedia
+package com.vivadevs.vikipedia.retrofit
 
 
 import com.vivadevs.vikipedia.api.DictionaryApi

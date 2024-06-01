@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -15,6 +16,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -35,6 +39,15 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
@@ -47,6 +60,24 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.gson)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.navigation.compose)
+
+    annotationProcessor(libs.androidx.room.compiler)
+    // To use Kotlin annotation processing tool (kapt)
+    kapt(libs.androidx.room.room.compiler)
+
+    // Jetpack compose
+    implementation(libs.androidx.ui.android)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.ui) // for UI components
+    implementation(libs.androidx.material) // for Material Design components
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

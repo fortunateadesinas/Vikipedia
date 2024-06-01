@@ -7,34 +7,58 @@
     android:padding="16dp"
     android:background="@color/my_primary"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/menu_btn"
+            android:layout_width="37dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:contentDescription="@string/menu_button"
+            android:focusable="true"
+            android:src="@drawable/ic_menu"
+            app:tint="@color/white"
+            tools:ignore="TouchTargetSizeCheck,RedundantDescriptionCheck" />
+
 
         <EditText
             android:id="@+id/search_input"
-            android:layout_width="match_parent"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:autofillHints="true"
             android:background="@drawable/rounded_corner"
+            android:backgroundTint="#32363F"
             android:hint="@string/search_word_here"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="14dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:padding="12dp" />
+            android:textColorHint="@color/grey"
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:id="@+id/search_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="37dp"
+            android:layout_height="34dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="21dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="17dp"
             android:clickable="true"
+            android:contentDescription="@string/search_button"
             android:focusable="true"
             android:src="@drawable/ic_search"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,RedundantDescriptionCheck" />
 
         <ProgressBar
             android:layout_width="100dp"
@@ -44,11 +68,77 @@
             android:indeterminateTint="@color/my_primary"
             android:id="@+id/progress_bar"
             android:visibility="gone"/>
-
-
-
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#32363F"
+        android:paddingHorizontal="10dp"
+        tools:ignore="ParentRelative">
+
+        <ImageView
+            android:id="@+id/volume_up_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="9dp"
+            android:clickable="true"
+            android:contentDescription="@string/volume_up_button"
+            android:focusable="true"
+            android:src="@drawable/ic_volume_up"
+            app:tint="@color/white"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/word_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="9dp"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap"
+            tools:text="word" />
+
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="9dp">
+
+            <ImageView
+                android:id="@+id/star_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="3dp"
+                android:clickable="true"
+                android:contentDescription="@string/volume_up_button"
+                android:focusable="true"
+                android:src="@drawable/ic_play"
+                app:tint="@color/white"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <ImageView
+                android:id="@+id/play_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:clickable="true"
+                android:contentDescription="@string/volume_up_button"
+                android:focusable="true"
+                android:src="@drawable/ic_star"
+                app:tint="@color/white"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,7 +148,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:layout_marginTop="8dp"
-        android:textColor="#1565C0"
+        android:textColor="#FFFFFF"
         android:id="@+id/word_textview"
         />
 
@@ -66,13 +156,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="/t e s t/"
-        android:textColor="@color/grey"
+        android:textColor="@color/white"
         android:id="@+id/phonetic_textview"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/meaning_recycler_view"/>
+        android:id="@+id/meaning_recycler_view"
+        />
 
 
 

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_primary"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center"
+        android:paddingHorizontal="10dp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:contentDescription="@string/back_arrow"
+            android:focusable="true"
+            app:srcCompat="@drawable/ic_back_arrow"
+            app:tint="@color/white"
+            tools:ignore="ObsoleteLayoutParam,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <ImageView
+            android:id="@+id/saveNote"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:contentDescription="@string/back_arrow"
+            android:focusable="true"
+            app:srcCompat="@drawable/ic_check"
+            app:tint="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/noteInputTitle"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:hint="@string/title"
+        android:paddingStart="10dp"
+        android:importantForAutofill="no"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/noteInputContent"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:hint="@string/note"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:paddingStart="10dp"
+        android:paddingBottom="550dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
+</LinearLayout>
